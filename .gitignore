@@ -33,7 +33,7 @@ ui-debug.log
 
 # example env instructions
 .env
-configs/
+# configs/
 
 # local env files
 .env.local
