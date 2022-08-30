@@ -1,0 +1,26 @@
+.header {
+  position: relative;
+  z-index: $indexHeader;
+  display: flex;
+  justify-content: center;
+  padding-top: $gutter;
+
+  span {
+    position: relative;
+    color: $primaryColor;
+    font-size: 70px;
+    font-weight: $fontWeightBlack;
+    text-align: center;
+
+    small {
+      position: absolute;
+      z-index: 1;
+      right: -12px;
+      top: 0;
+      color: #b5b5b5;
+      font-family: "Lato";
+      font-weight: $fontWeightLight;
+      font-size: $fontSize;
+    }
+  }
+}

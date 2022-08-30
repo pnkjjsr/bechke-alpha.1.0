@@ -1,9 +1,13 @@
 {
-  "name": "bechke-v1.0",
-  "version": "0.1.0",
+  "name": "bechke",
+  "version": "1.0.0",
   "private": true,
+  "description": "Bechke App | Supplement Service",
+  "engines": {
+    "node": "12"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 2000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -15,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "sass": "^1.54.6"
   }
 }

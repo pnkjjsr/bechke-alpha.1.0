@@ -1,0 +1,51 @@
+.feature {
+  max-width: $widthMax;
+  margin: auto;
+  margin-bottom: $gutter * 5;
+  padding: 0 $gutter;
+
+  figure {
+    margin: 0 0 $gutter;
+  }
+
+  h2 {
+    margin-bottom: $gutter * 2;
+    text-align: center;
+
+    &.second {
+      margin-bottom: $gutter * 5;
+      font-weight: $fontWeightLight;
+    }
+  }
+
+  ul {
+    margin-bottom: $gutter;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: $gutter * 2;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        margin-right: $gutter;
+        background: url("/icons/check-o-sm.png") left top no-repeat;
+      }
+      span {
+        margin-top: $gutter / 2 - 1;
+      }
+    }
+  }
+
+  button {
+    @include btnPrimary;
+    width: 100%;
+    max-width: $widthMin;
+    height: 75px;
+    font-size: $fontSizeH2;
+  }
+}

@@ -1,0 +1,138 @@
+.plans {
+  margin-bottom: $gutter * 6;
+  padding: $gutter * 2;
+  background-color: $grayLight;
+
+  h2 {
+    text-align: center;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(xs) {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    width: 100%;
+    max-width: $xl;
+    margin: auto;
+
+    > div {
+      margin: initial;
+
+      margin-bottom: $gutter * 3;
+      @include media-breakpoint-up(md) {
+        margin-right: $gutter * 3;
+      }
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+
+      @include media-breakpoint-up(xl) {
+        &:nth-child(even) {
+          margin-right: $gutter * 3;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.plan {
+  max-width: $widthMin;
+  @include media-breakpoint-up(xs) {
+    min-width: $widthMin;
+  }
+
+  margin: auto;
+  margin-bottom: $gutter * 4;
+  padding: ($gutter * 2) $gutter;
+
+  background: $white;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+  border-radius: $gutter * 2;
+
+  h2 {
+    margin-bottom: $gutter;
+    font-weight: $fontWeightBold;
+
+    small {
+      display: block;
+      margin-top: $gutter / 2;
+      font-size: $fontSize;
+      font-weight: $fontWeight;
+    }
+  }
+
+  .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $gutter;
+    font-size: $fontSizeH1;
+    font-weight: $fontWeightBold;
+    text-align: center;
+
+    small {
+      margin-left: $gutter;
+      font-size: $fontSize;
+      font-weight: $fontWeight;
+    }
+  }
+
+  .action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $gutter * 2;
+
+    button {
+      @include btnSecondary();
+
+      width: 185px;
+      height: 50px;
+      font-size: $fontSizeH3;
+      cursor: pointer;
+    }
+  }
+
+  .points {
+    text-align: center;
+
+    li {
+      margin-bottom: $gutter;
+
+      // &:last-child {
+      //   margin: 0;
+      // }
+    }
+  }
+
+  &.primary {
+    background-color: $primaryColorLight;
+
+    button {
+      &.outline {
+        border: 0 none;
+        background-color: $primaryColor;
+        color: $white;
+      }
+    }
+  }
+  &.secondary {
+    background-color: $secondaryColorLight;
+
+    button {
+      &.outline {
+        border: 0 none;
+        background-color: $secondaryColor;
+        color: $white;
+      }
+    }
+  }
+}

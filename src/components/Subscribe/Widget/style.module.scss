@@ -1,0 +1,45 @@
+.subscribe {
+  width: 100%;
+  max-width: $widthMax;
+  margin: auto;
+  margin-bottom: calc($gutter * 7);
+
+  h4 {
+    margin-bottom: $gutter;
+    font-size: $fontSizeH5;
+    font-weight: $fontWeightLight;
+    text-align: center;
+  }
+
+  .form {
+    padding: 0 $gutter;
+
+    form {
+      display: flex;
+      justify-content: center;
+      background-color: $grayLight;
+      border-radius: $gutter * 2;
+    }
+
+    input {
+      height: 50px;
+      padding: 0 0 0 ($gutter * 2);
+      margin: 0;
+      border: 0 none;
+      background-color: transparent;
+      color: $textColor;
+      font-weight: $fontWeightThin;
+      outline: none;
+    }
+    button {
+      width: 129px;
+      height: 50px;
+      background: $secondaryColor;
+      border: 0 none;
+      border-radius: $gutter * 2;
+      color: $white;
+      font-size: $fontSize;
+      outline: none;
+    }
+  }
+}

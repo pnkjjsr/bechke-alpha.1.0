@@ -1,0 +1,31 @@
+.social {
+  width: 100%;
+  max-width: $widthMax;
+  margin: auto;
+  margin-bottom: calc($gutter * 5);
+
+  h4 {
+    margin-bottom: calc($gutter * 5);
+    font-size: $fontSizeH4;
+    font-weight: $fontWeightBlack;
+    text-align: center;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 $gutter;
+
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 75px;
+      height: 75px;
+      background: $white;
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+    }
+  }
+}

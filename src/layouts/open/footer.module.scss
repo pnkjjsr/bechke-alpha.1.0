@@ -1,0 +1,15 @@
+.footer {
+  position: fixed;
+  z-index: $indexFooter;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  .autherize {
+    padding: ($gutter * 4) 0;
+    color: $textColor;
+    text-align: center;
+  }
+}

@@ -1,0 +1,7 @@
+.main {
+  position: relative;
+  z-index: $indexMain;
+  // height: calc(100vh - ($heightHeader + $heightFooter));
+  margin-bottom: $heightFooter;
+  background-color: $bgBody;
+}

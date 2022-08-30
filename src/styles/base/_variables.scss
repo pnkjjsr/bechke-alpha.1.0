@@ -1,0 +1,47 @@
+$fontFamily: "Lato";
+
+$fontSizeSmall: 13px;
+$fontSize: 16px;
+$fontSizeH1: 36px;
+$fontSizeH2: 26px;
+$fontSizeH3: 24px;
+$fontSizeH4: 22px;
+$fontSizeH5: 20px;
+$fontSizeH6: 18px;
+
+$fontWeightThin: 100;
+$fontWeightLight: 300;
+$fontWeight: 400;
+$fontWeightBold: 700;
+$fontWeightBlack: 900;
+
+$primaryColor: #66c1de;
+$primaryColorLight: lighten($primaryColor, 30%);
+$primaryColorDark: darken($primaryColor, 30%);
+
+$secondaryColor: #de66c1;
+$secondaryColorLight: lighten($secondaryColor, 30%);
+$secondaryColorDark: darken($secondaryColor, 30%);
+$accentColor: "";
+
+$textColor: #0c2e39;
+$textColorLight: #5e737a;
+
+$white: #fff;
+$black: #000;
+$gray: darken($white, 50%);
+$grayLight: lighten($gray, 45%);
+
+$bgBody: $white;
+
+$indexHeader: 3;
+$indexMain: 2;
+$indexFooter: 1;
+
+$gutter: 8px;
+
+$heightHeader: 70px;
+$heightFooter: 400px;
+
+$widthMax: 340px;
+$widthMin: 323px;

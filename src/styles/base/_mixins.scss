@@ -1,0 +1,37 @@
+@mixin btnPrimary() {
+  width: 180px;
+  height: 46px;
+  border: 0 none;
+  border-radius: $gutter * 2;
+  background-color: $primaryColor;
+  color: $white;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  text-align: center;
+  outline: none;
+
+  &.outline {
+    background-color: $white;
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+  }
+}
+
+@mixin btnSecondary() {
+  width: 180px;
+  height: 46px;
+  border: 0 none;
+  border-radius: $gutter * 2;
+  background-color: $secondaryColor;
+  color: $white;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  text-align: center;
+  outline: none;
+
+  &.outline {
+    background-color: $white;
+    border: 1px solid $secondaryColor;
+    color: $secondaryColor;
+  }
+}

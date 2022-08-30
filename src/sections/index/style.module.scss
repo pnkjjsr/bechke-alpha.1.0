@@ -1,0 +1,21 @@
+.home {
+  margin: $gutter 0;
+
+  h1 {
+    margin-bottom: $gutter * 6;
+    text-align: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}
