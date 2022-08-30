@@ -10,12 +10,12 @@ const tableData = [
   },
   {
     label: "Monthly Fee",
-    bechke: "Start Rs.499 to Rs.2999 as per client requirment.",
-    others: "Start Rs.5,000 to Rs.10,000 as per ecommerce platform.",
+    bechke: "Start from Rs.499 to Rs.2999 as per client requirment.",
+    others: "Start from Rs.5,000 to Rs.10,000 as per ecommerce platform.",
   },
   {
     label: "Product Catalog",
-    bechke: "Its always Bechke, responsiblity to update product for you.",
+    bechke: "Bechke's team responsiblity to update product for you.",
     others:
       "Company charge your first for this and after they ask money for every single change.",
   },
@@ -33,7 +33,7 @@ const tableData = [
   {
     label: "Free Technology Support*",
     bechke:
-      "Our tech team just message far for work for you and improve for your feedback.",
+      "Our technology team is continuously working on your feedback and the response time for your enquiry/improvement is less than 30 mintues",
     others: "They charge as per your changes and requirment.",
   },
   {

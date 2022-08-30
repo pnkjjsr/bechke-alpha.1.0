@@ -14,7 +14,7 @@ export const Feature = () => {
 
       <ul>
         <li>
-          <span>100+ Products on your 1 finger click</span>
+          <span>100+ Products on your one click</span>
         </li>
         <li>
           <span>All the maintance work done by us</span>
