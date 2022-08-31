@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+
+import ModalHOC from "@/components/Common/Modal";
 
 import s from "./style.module.scss";
 
 export const Feature = () => {
+  const [modalFn, setModalFn] = useState();
+
+  const openFn = (fn) => {
+    setModalFn(() => fn);
+  };
+
+  const handleDemo = () => {
+    modalFn();
+  };
+
   return (
     <div className={s.feature}>
       <figure>
-        <Image src="/images/b_feature.png" alt="Bechke feature banner" width="335" height="158" />
+        <Image
+          src="/images/b_feature.png"
+          alt="Bechke feature banner"
+          width="335"
+          height="158"
+        />
       </figure>
 
       <h2>No more expensive Website and hassle free maintenance </h2>
@@ -31,7 +48,9 @@ export const Feature = () => {
       </ul>
 
       <h2 className={s.second}>Free Introduction to the world of startup.</h2>
-      <button>DEMO</button>
+      <button onClick={handleDemo}>DEMO</button>
+
+      <ModalHOC title="Demo" text="" action={openFn}></ModalHOC>
     </div>
   );
 };

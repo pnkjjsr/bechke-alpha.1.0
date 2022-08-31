@@ -1,3 +1,4 @@
+import React from "react";
 import { Feature } from "@/components/Feature/bechke"
 import { Compare } from "@/components/Compare/Table"
 import { Subscriptions } from "@/components/Subscribe/Plans"

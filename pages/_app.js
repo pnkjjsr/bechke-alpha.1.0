@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "@/styles/theme"
 
 import { analytics } from "@/libs/firebase";
-
 import { Layout } from "@/layouts/open/index";
 
 import "@/styles/global.scss"
@@ -37,9 +39,13 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <CssBaseline enableColorScheme />
+
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </>
 
   )

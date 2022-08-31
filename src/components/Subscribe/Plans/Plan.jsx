@@ -4,6 +4,7 @@ import s from "./style.module.scss";
 
 export const Plan = (props) => {
   const [type, setType] = useState(props.type);
+  const [variant, setVariant] = useState(props.variant);
   const [title, setTitle] = useState(props.title);
   const [sub, setSub] = useState(props.sub);
   const [price, setPrice] = useState(props.price);
@@ -30,10 +31,15 @@ export const Plan = (props) => {
       </div>
 
       <div className={s.action}>
-        <button className={s.outline}>Interested</button>
+        <button
+          className={s.outline}
+          onClick={() => props.action(variant, title)}
+        >
+          Interested
+        </button>
       </div>
 
-      <ul className={s.points}>{list()}</ul>
+      <ol className={s.points}>{list()}</ol>
     </div>
   );
 };

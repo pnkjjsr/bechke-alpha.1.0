@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import ModalHOC from "@/components/Common/Modal";
 
 import { Plan } from "./Plan";
 
@@ -83,6 +85,20 @@ const plansData = [
 ];
 
 export const Subscriptions = () => {
+  const [modalTitle, setModalTitle] = useState();
+  const [variant, setVariant] = useState();
+  const [modalFn, setModalFn] = useState();
+
+  const openFn = (fn) => {
+    setModalFn(() => fn);
+  };
+
+  const handleModal = (variant, title) => {
+    setModalTitle(title);
+    setVariant(variant);
+    modalFn();
+  };
+
   const renderPlans = () => {
     return plansData.map((item, key) => {
       return (
@@ -93,6 +109,7 @@ export const Subscriptions = () => {
           sub={item.sub}
           price={item.price}
           points={item.points}
+          action={handleModal}
         />
       );
     });
@@ -103,6 +120,8 @@ export const Subscriptions = () => {
       <h2>Subscription Plans</h2>
 
       <div className={s.item}>{renderPlans()}</div>
+
+      <ModalHOC title={modalTitle} text="" action={openFn}></ModalHOC>
     </div>
   );
 };
