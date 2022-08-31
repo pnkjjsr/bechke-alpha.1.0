@@ -38,7 +38,19 @@ const theme = createTheme({
   },
   typography: {
     htmlFontSize: 16,
-    fontFamily: "Lato, Tahoma, Geneva, Verdana, sans-serif",
+    fontFamily: [
+      'Lato',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
     fontSize: 16,
     fontWeightThin: 100,
     fontWeightLight: 300,
@@ -64,6 +76,16 @@ const theme = createTheme({
   },
 
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+      }
+    `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {

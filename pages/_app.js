@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
 
-      <CssBaseline enableColorScheme />
+      {/* <CssBaseline enableColorScheme /> */}
 
       <ThemeProvider theme={theme}>
         <Layout>
