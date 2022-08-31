@@ -11,8 +11,6 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 
-import s from "./style.module.scss";
-
 const DialogTransition = styled(Dialog)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     top: "inherit",
@@ -60,7 +58,6 @@ export default function ModalHOC(props) {
   return (
     <>
       <DialogTransition
-        className={s.modal}
         fullScreen={fullScreen}
         fullWidth={true}
         maxWidth={maxWidth}
