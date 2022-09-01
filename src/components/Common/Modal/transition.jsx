@@ -14,7 +14,7 @@ import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 const DialogTransition = styled(Dialog)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     top: "inherit",
-    height: "80vh",
+    height: "90vh",
 
     ".MuiDialog-container": {
       borderTopRightRadius: theme.spacing(2),

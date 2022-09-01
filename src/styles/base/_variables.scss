@@ -26,6 +26,7 @@ $accentColor: "";
 
 $textColor: #0c2e39;
 $textColorLight: #5e737a;
+$textColorLighter: lighten($textColorLight, 30%);
 
 $white: #fff;
 $black: #000;

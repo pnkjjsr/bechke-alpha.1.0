@@ -38,19 +38,15 @@ const theme = createTheme({
   },
   typography: {
     htmlFontSize: 16,
-    fontFamily: [
-      'Lato',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
+    typography: {
+      fontFamily: [
+        "Lato",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif"
+      ].join(",")
+    },
     fontSize: 16,
     fontWeightThin: 100,
     fontWeightLight: 300,

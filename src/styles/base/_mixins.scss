@@ -1,14 +1,19 @@
-@mixin btnPrimary() {
+.btn {
   width: 180px;
   height: 46px;
   border: 0 none;
   border-radius: $gutter * 2;
-  background-color: $primaryColor;
   color: $white;
   font-size: $fontSize;
+  font-family: $fontFamily;
   font-weight: $fontWeight;
   text-align: center;
   outline: none;
+}
+
+@mixin btnPrimary() {
+  @extend .btn;
+  background-color: $primaryColor;
 
   &.outline {
     background-color: $white;
@@ -18,16 +23,8 @@
 }
 
 @mixin btnSecondary() {
-  width: 180px;
-  height: 46px;
-  border: 0 none;
-  border-radius: $gutter * 2;
+  @extend .btn;
   background-color: $secondaryColor;
-  color: $white;
-  font-size: $fontSize;
-  font-weight: $fontWeight;
-  text-align: center;
-  outline: none;
 
   &.outline {
     background-color: $white;

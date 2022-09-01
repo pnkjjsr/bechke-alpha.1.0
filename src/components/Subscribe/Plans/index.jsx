@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import ModalHOC from "@/components/Common/Modal";
+import ModalHOC from "@/components/Common/Modal/transition";
+import SubscribeForm from "@/components/Form/Subscribe";
 
 import { Plan } from "./Plan";
 
@@ -121,7 +122,9 @@ export const Subscriptions = () => {
 
       <div className={s.item}>{renderPlans()}</div>
 
-      <ModalHOC title={modalTitle} text="" action={openFn}></ModalHOC>
+      <ModalHOC title={modalTitle} text="" action={openFn}>
+        <SubscribeForm />
+      </ModalHOC>
     </div>
   );
 };

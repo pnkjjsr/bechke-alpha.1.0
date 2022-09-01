@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import ModalHOC from "@/components/Common/Modal";
+import ModalHOC from "@/components/Common/Modal/transition";
+import SliderHOC from "@/components/Common/Slider/stepper";
 
 import s from "./style.module.scss";
 
@@ -50,7 +51,9 @@ export const Feature = () => {
       <h2 className={s.second}>Free Introduction to the world of startup.</h2>
       <button onClick={handleDemo}>DEMO</button>
 
-      <ModalHOC title="Demo" text="" action={openFn}></ModalHOC>
+      <ModalHOC title="Demo" text="" action={openFn}>
+        <SliderHOC />
+      </ModalHOC>
     </div>
   );
 };
