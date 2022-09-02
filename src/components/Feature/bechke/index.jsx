@@ -6,6 +6,21 @@ import SliderHOC from "@/components/Common/Slider/stepper";
 
 import s from "./style.module.scss";
 
+const demoImages = [
+  {
+    label: "Your Home Page",
+    imgPath: "/images/demo/home.png",
+  },
+  {
+    label: "Product Page",
+    imgPath: "/images/demo/product.png",
+  },
+  {
+    label: "Your Account",
+    imgPath: "/images/demo/account.png",
+  },
+];
+
 export const Feature = () => {
   const [modalFn, setModalFn] = useState();
 
@@ -52,7 +67,7 @@ export const Feature = () => {
       <button onClick={handleDemo}>DEMO</button>
 
       <ModalHOC title="Demo" text="" action={openFn}>
-        <SliderHOC />
+        <SliderHOC slides={demoImages} />
       </ModalHOC>
     </div>
   );
