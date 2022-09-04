@@ -7,7 +7,7 @@ import Checkbox from "@mui/material/Checkbox";
 
 import s from "./style.module.scss";
 
-const label = { inputProps: { "aria-label": "Checkbox demo", for: "terms" } };
+const label = { inputProps: { "aria-label": "Checkbox demo", htmlFor: "terms" } };
 
 export default function Subscribe() {
   return (

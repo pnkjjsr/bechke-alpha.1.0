@@ -94,7 +94,6 @@ const theme = createTheme({
         }
       },
     },
-
     MuiIconButton: {
       styleOverrides: {
         root: {
