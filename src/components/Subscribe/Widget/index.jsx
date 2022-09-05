@@ -11,7 +11,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 
-import validation from "@/utils/validation";
+import validation from "./validation";
 
 import Snackbar from "@/components/Common/Snackbar";
 
@@ -74,6 +74,7 @@ export const Subscribe = () => {
         description: "Subscribe successfully done!",
         severity: "success",
       });
+      el.value = "";
       return toastOpen();
     }
   };

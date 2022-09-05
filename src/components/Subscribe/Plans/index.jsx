@@ -9,6 +9,7 @@ import s from "./style.module.scss";
 
 const plansData = [
   {
+    variant: "free",
     title: "FREE - 5 Products Shop",
     sub: "Essential features to digitalize your business",
     price: "0",
@@ -18,6 +19,7 @@ const plansData = [
     ],
   },
   {
+    variant: "499",
     type: "primary",
     title: "15 Products Shop",
     sub: "Essential features and 15 products space",
@@ -31,6 +33,7 @@ const plansData = [
     ],
   },
   {
+    variant: "999",
     type: "secondary",
     title: "50 Products Shop",
     sub: "Essential features and 50 products space",
@@ -45,6 +48,7 @@ const plansData = [
     ],
   },
   {
+    variant: "1499",
     title: "100 Products Shop",
     sub: "Essential features and 100 products space",
     price: "1499",
@@ -58,6 +62,7 @@ const plansData = [
     ],
   },
   {
+    variant: "1999",
     title: "Unlimited Products Shop",
     sub: "Unlimited products space",
     price: "1999",
@@ -71,6 +76,7 @@ const plansData = [
     ],
   },
   {
+    variant: "2999",
     title: "100% Your Brand",
     sub: "Unlimited products space",
     price: "2999",
@@ -88,16 +94,17 @@ const plansData = [
 export const Subscriptions = () => {
   const [modalTitle, setModalTitle] = useState();
   const [variant, setVariant] = useState();
-  const [modalFn, setModalFn] = useState();
+  const [openFn, setOpenFn] = useState();
+  const [closeFn, setCloseFn] = useState();
 
-  const openFn = (fn) => {
-    setModalFn(() => fn);
-  };
+  const modalOpen = (fn) => setOpenFn(() => fn);
+  const modalClose = (fn) => setCloseFn(() => fn);
+  const submitCallback = () => closeFn();
 
-  const handleModal = (variant, title) => {
+  const handleModal = (type, title) => {
     setModalTitle(title);
-    setVariant(variant);
-    modalFn();
+    setVariant(type);
+    openFn();
   };
 
   const renderPlans = () => {
@@ -105,6 +112,7 @@ export const Subscriptions = () => {
       return (
         <Plan
           key={key}
+          variant={item.variant}
           type={item.type}
           title={item.title}
           sub={item.sub}
@@ -122,8 +130,13 @@ export const Subscriptions = () => {
 
       <div className={s.item}>{renderPlans()}</div>
 
-      <ModalHOC title={modalTitle} text="" action={openFn}>
-        <SubscribeForm />
+      <ModalHOC
+        title={modalTitle}
+        text=""
+        openFn={modalOpen}
+        closeFn={modalClose}
+      >
+        <SubscribeForm type={variant} callback={submitCallback} />
       </ModalHOC>
     </div>
   );

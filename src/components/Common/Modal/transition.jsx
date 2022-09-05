@@ -43,7 +43,7 @@ export default function ModalHOC(props) {
   const [maxWidth, setMaxWidth] = useState("sm");
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
+  const handleOpen = () => {
     setOpen(true);
   };
 
@@ -52,7 +52,8 @@ export default function ModalHOC(props) {
   };
 
   useEffect(() => {
-    props.action(handleClickOpen);
+    props.openFn(handleOpen);
+    props.closeFn(handleClose);
   }, []);
 
   return (

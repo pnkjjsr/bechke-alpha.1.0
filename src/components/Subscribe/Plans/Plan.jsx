@@ -18,7 +18,7 @@ export const Plan = (props) => {
 
   let theme =
     type === "primary" ? s.primary : type === "secondary" ? s.secondary : "";
-
+  
   return (
     <div className={`${s.plan} ${theme}`}>
       <h2>

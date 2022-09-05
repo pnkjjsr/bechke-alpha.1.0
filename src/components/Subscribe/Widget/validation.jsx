@@ -1,4 +1,4 @@
-import { isEmail, isEmpty } from "./type";
+import { isEmail, isEmpty } from "../../../utils/validation/type";
 
 function validation(data) {
   let errors = {};
@@ -9,10 +9,11 @@ function validation(data) {
     errors["email"] = "Must be a valid email address";
   }
 
+  // if (isEmpty(data.mobile)) errors["mobile"] = 'Mobile must not be empty';
   // if (isEmpty(data.pincode)) errors.pincode = 'Pincode must not be empty';
   // if (isEmpty(data.area)) errors.area = 'Area must not be empty';
   // if (isEmpty(data.password)) errors.password = 'Password must not be empty';
-  // if (isEmpty(data.mobile)) errors.mobile = 'Mobile must not be empty';
+  
 
   return {
     errors,

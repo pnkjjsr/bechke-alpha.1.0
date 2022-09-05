@@ -22,15 +22,13 @@ const demoImages = [
 ];
 
 export const Feature = () => {
-  const [modalFn, setModalFn] = useState();
+  const [openFn, setOpenFn] = useState();
+  const [closeFn, setCloseFn] = useState();
 
-  const openFn = (fn) => {
-    setModalFn(() => fn);
-  };
+  const modalOpen = (fn) => setOpenFn(() => fn);
+  const modalClose = (fn) => setCloseFn(() => fn);
 
-  const handleDemo = () => {
-    modalFn();
-  };
+  const handleDemo = () => openFn();
 
   return (
     <div className={s.feature}>
@@ -66,7 +64,7 @@ export const Feature = () => {
       <h2 className={s.second}>Free Introduction to the world of startup.</h2>
       <button onClick={handleDemo}>DEMO</button>
 
-      <ModalHOC title="Demo" text="" action={openFn}>
+      <ModalHOC title="Demo" text="" openFn={modalOpen} closeFn={modalClose}>
         <SliderHOC slides={demoImages} />
       </ModalHOC>
     </div>

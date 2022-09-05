@@ -13,3 +13,10 @@ exports.isBoolean = (boolean) => {
   if (boolean === '') return true;
   else return false;
 };
+
+
+exports.isMobile = (mobile) => {
+  if (!Number(mobile)) return false;
+  else if (mobile.length < 10) return false;
+  else return true;
+};

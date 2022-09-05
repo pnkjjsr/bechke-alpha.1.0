@@ -11,14 +11,6 @@ import s from "./style.module.scss";
 
 const theme = createTheme({
   components: {
-    // Name of the component ⚛️
-    MuiButtonBase: {
-      defaultProps: {
-        // The default props to change
-        disableRipple: true, // No more ripple, on the whole application 💣!
-      },
-    },
-
     MuiAlert: {
       defaultProps: {
         message: {},
