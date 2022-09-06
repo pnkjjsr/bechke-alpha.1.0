@@ -17,14 +17,14 @@ const nextConfig = {
       //   destination: '/',
       // },
       {
-        source: '/home',
+        source: '/',
         has: [
           {
             type: 'host',
-            value: 'vercel.app',
+            value: 'sochke.com',
           },
         ],
-        destination: '/home',
+        destination: '/sochke',
       },
     ]
   },
