@@ -2,7 +2,6 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
   reactStrictMode: true,
   swcMinify: true,
 
@@ -11,28 +10,34 @@ const nextConfig = {
     prependData: `@import "base.scss";`
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'sochke.com',
+          },
+        ],
+        permanent: false,
+        destination: '/home',
+      },
+    ]
+  },
+
   async rewrites() {
     return [
-      // {
-      //   source: '/',
-      //   has: [
-      //     {
-      //       type: 'host',
-      //       value: 'localhost:2000',
-      //     },
-      //   ],
-      //   destination: '/about',
-      // },
-      // {
-      //   source: '/:path*',
-      //   has: [
-      //     {
-      //       type: 'host',
-      //       value: 'sochke.com',
-      //     },
-      //   ],
-      //   destination: '/about',
-      // },
+      {
+        source: '/home',
+        has: [
+          {
+            type: 'host',
+            value: 'sochke.com',
+          },
+        ],
+        destination: '/about',
+      },
     ]
   },
 }
