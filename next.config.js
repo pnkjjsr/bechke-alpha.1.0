@@ -13,11 +13,11 @@ const nextConfig = {
   async rewrites() {
     return [
       // {
-      //   source: '/home',
-      //   destination: '/',
+      //   source: '/',
+      //   destination: '/home',
       // },
       {
-        source: '/',
+        source: '/:path*',
         has: [
           {
             type: 'host',
