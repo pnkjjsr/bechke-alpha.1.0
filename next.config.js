@@ -24,7 +24,7 @@ const nextConfig = {
             value: 'sochke.com',
           },
         ],
-        destination: '/sochke',
+        destination: '/about',
       },
     ]
   },
