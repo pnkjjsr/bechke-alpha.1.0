@@ -2,6 +2,7 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
   reactStrictMode: true,
   swcMinify: true,
 
@@ -14,18 +15,24 @@ const nextConfig = {
     return [
       // {
       //   source: '/',
-      //   destination: '/home',
+      //   has: [
+      //     {
+      //       type: 'host',
+      //       value: 'localhost:2000',
+      //     },
+      //   ],
+      //   destination: '/about',
       // },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'sochke.com',
-          },
-        ],
-        destination: '/about',
-      },
+      // {
+      //   source: '/:path*',
+      //   has: [
+      //     {
+      //       type: 'host',
+      //       value: 'sochke.com',
+      //     },
+      //   ],
+      //   destination: '/about',
+      // },
     ]
   },
 }
