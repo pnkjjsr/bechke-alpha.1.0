@@ -13,18 +13,18 @@ const nextConfig = {
   async rewrites() {
     return [
       // {
-      //   source: '/about',
+      //   source: '/home',
       //   destination: '/',
       // },
       {
-        source: 'bechke-alpha-1-0-pnkjjsr.vercel.app',
+        source: '/home',
         has: [
           {
             type: 'host',
             value: 'vercel.app',
           },
         ],
-        destination: '/about',
+        destination: '/home',
       },
     ]
   },
