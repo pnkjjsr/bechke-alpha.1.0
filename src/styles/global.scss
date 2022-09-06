@@ -160,16 +160,52 @@ h2 {
   font-weight: $fontWeightBlack;
 }
 
+h3 {
+  margin-bottom: $gutter * 3;
+  font-size: $fontSizeH3;
+  font-weight: $fontWeightBold;
+}
+
+h4 {
+  margin-bottom: $gutter * 2;
+  font-size: $fontSizeH4;
+  font-weight: $fontWeightBold;
+}
+
+.static {
+  margin-top: $gutter * 5;
+  padding-bottom: $gutter;
+  font-size: $fontSize + $gutter/2;
+  font-weight: $fontWeightLight;
+  line-height: $fontSize + $gutter + 3;
+
+  p {
+    margin-bottom: $gutter * 3;
+    line-height: $fontSize + $gutter + 3;
+  }
+
+  ol {
+    margin-bottom: $gutter * 2;
+    list-style-type: auto;
+    list-style-position: outside;
+
+    li {
+      padding-bottom: $gutter * 2;
+      margin-left: $gutter * 3;
+    }
+  }
+}
+
 .btnPrimary {
   @include btnPrimary();
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }

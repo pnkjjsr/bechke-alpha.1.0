@@ -31,7 +31,9 @@ $textColorLighter: lighten($textColorLight, 30%);
 $white: #fff;
 $black: #000;
 $gray: darken($white, 50%);
-$grayLight: lighten($gray, 45%);
+$grayLight: lighten($black, 90%);
+$grayLighter: lighten($black, 95%);
+$grayLightest: lighten($black, 98%);
 
 $bgBody: $white;
 
