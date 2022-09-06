@@ -12,11 +12,15 @@
     font-weight: $fontWeightBlack;
     text-align: center;
 
+    a {
+      text-decoration: none;
+    }
+
     small {
       position: absolute;
       z-index: 1;
       right: -12px;
-      top: 0;
+      top: $gutter/2;
       color: #b5b5b5;
       font-family: "Lato";
       font-weight: $fontWeightLight;

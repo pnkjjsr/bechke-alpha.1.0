@@ -172,6 +172,13 @@ h4 {
   font-weight: $fontWeightBold;
 }
 
+a {
+  color: $primaryColor;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .static {
   margin-top: $gutter * 5;
   padding-bottom: $gutter;

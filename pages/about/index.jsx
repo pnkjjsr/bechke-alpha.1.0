@@ -7,12 +7,12 @@ function About() {
       <div className="static">
         <h1>About Us</h1>
         <p>
-          "Bechke.com", is an online service for small shop owners. We provide
-          them full technology support to do their business online.
+          &quot;Bechke.com&quot;, is an online service for small shop owners. We
+          provide them full technology support to do their business online.
         </p>
 
         <p>
-          It's not a regular directory platform. Bechke takes care of every
+          It&apos;s not a regular directory platform. Bechke takes care of every
           client and customizes features according to their need.
         </p>
 
@@ -28,13 +28,15 @@ function About() {
             and description
           </li>
           <li>
-            Each product detail updated the same as any other "1000 cr startup
-            company" level
+            Each product detail updated the same as any other &quot;1000 cr
+            startup company&quot; level
           </li>
-          <li>"Adding &amp; Removing" products is just by one click</li>
           <li>
-            No more 'Graphic designer' need. With Bechke technology'ss help,
-            banner creation is just in one 5 sec.
+            &quot;Adding &amp; Removing&quot; products is just by one click
+          </li>
+          <li>
+            No more &apos;Graphic designer&apos; need. With Bechke
+            technology&apos;s help, banner creation is just in one 5 sec.
           </li>
         </ol>
 

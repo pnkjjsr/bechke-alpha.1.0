@@ -7,6 +7,14 @@
   justify-content: center;
   width: 100%;
 
+  .links {
+    text-align: center;
+
+    a {
+      margin: 0 $gutter;
+    }
+  }
+
   .autherize {
     padding: ($gutter * 4) 0;
     color: $textColor;
