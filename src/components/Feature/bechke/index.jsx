@@ -8,7 +8,7 @@ import s from "./style.module.scss";
 
 const demoImages = [
   {
-    label: "Your Home Page",
+    label: "Home Page",
     imgPath: "/images/demo/home.png",
   },
   {
@@ -16,8 +16,28 @@ const demoImages = [
     imgPath: "/images/demo/product.png",
   },
   {
-    label: "Your Account",
+    label: "Account",
     imgPath: "/images/demo/account.png",
+  },
+  {
+    label: "Update Logo",
+    imgPath: "/images/demo/update-logo.png",
+  },
+  {
+    label: "Add Product",
+    imgPath: "/images/demo/add-product.png",
+  },
+  {
+    label: "Update Product",
+    imgPath: "/images/demo/update-product.png",
+  },
+  {
+    label: "Add Banner",
+    imgPath: "/images/demo/add-banner.png",
+  },
+  {
+    label: "Update Banner",
+    imgPath: "/images/demo/update-banner.png",
   },
 ];
 
