@@ -4,7 +4,7 @@ import NextHead from "next/head";
 import { string } from "prop-types";
 
 const DEFAULT_CONFIG = {
-  title: "Bechke - Start Your Online Shop - As Easy As Ordering Pizza",
+  title: "Bechke - Zero Fees On Your Sales - We Provide Technology Support As Like Your Mini Startup",
   desc: "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
   keyword: "Bechke,BechkeApp,Supplement,Supplement Shop,Small Seller",
   defaultOGURL: "https://www.bechke.com",
