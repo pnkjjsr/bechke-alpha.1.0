@@ -54,7 +54,7 @@ export default function ModalHOC(props) {
   useEffect(() => {
     props.openFn(handleOpen);
     props.closeFn(handleClose);
-  }, []);
+  });
 
   return (
     <>

@@ -66,7 +66,7 @@ export default function CustomizedSnackbars(props) {
 
   React.useEffect(() => {
     props.open(handleOpen);
-  }, []);
+  });
 
   return (
     <div className={s.snackbar}>
