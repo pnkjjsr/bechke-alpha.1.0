@@ -4,11 +4,12 @@ import NextHead from "next/head";
 import { string } from "prop-types";
 
 const DEFAULT_CONFIG = {
-  title: "Bechke - Zero Fees On Your Sales - We Provide Technology Support As Like Your Mini Startup",
+  title:
+    "Bechke - Zero Fees On Your Sales - We Provide Technology Support As Like Your Mini Startup",
   desc: "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
   keyword: "Bechke,BechkeApp,Supplement,Supplement Shop,Small Seller",
   defaultOGURL: "https://www.bechke.com",
-  defaultOGImage: "/images/b_feature.png",
+  defaultOGImage: "/pwa-icons/og.png",
   defaultDescription:
     "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
 };
@@ -49,6 +50,8 @@ class Head extends React.Component {
 
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
+          <meta property="og:image" content={DEFAULT_CONFIG.defaultOGImage} />
+
           <meta
             name="apple-mobile-web-app-capable"
             content="black-translucent"
