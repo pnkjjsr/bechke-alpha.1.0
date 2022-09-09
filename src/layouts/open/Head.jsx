@@ -9,7 +9,7 @@ const DEFAULT_CONFIG = {
   desc: "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
   keyword: "Bechke,BechkeApp,Supplement,Supplement Shop,Small Seller",
   defaultOGURL: "https://www.bechke.com",
-  defaultOGImage: "/pwa-icons/og.png",
+  defaultOGImage: "https://www.bechke.com/pwa-icons/og.png",
   defaultDescription:
     "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
 };
