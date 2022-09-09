@@ -4,12 +4,11 @@ import NextHead from "next/head";
 import { string } from "prop-types";
 
 const DEFAULT_CONFIG = {
-  title:
-    "Bechke - Zero Fees On Your Sales - We Provide Technology Support As Like Your Mini Startup",
+  title: "Bechke - Your Online Store Website Only In Rs.500/-",
   desc: "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
   keyword: "Bechke,BechkeApp,Supplement,Supplement Shop,Small Seller",
   defaultOGURL: "https://www.bechke.com",
-  defaultOGImage: "https://www.bechke.com/pwa-icons/og.png",
+  defaultOGImage: "https://www.bechke.com/pwa-icons/og.jpg",
   defaultDescription:
     "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
 };
