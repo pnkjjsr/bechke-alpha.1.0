@@ -47,19 +47,18 @@ class Head extends React.Component {
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@bechkeApp" />
           <meta name="twitter:creator" content="@bechkeApp" />
+          <meta name="twitter:site" content={DEFAULT_CONFIG.defaultOGURL} />
+          <meta name="twitter:image" content={DEFAULT_CONFIG.defaultOGImage} />
 
           <meta property="og:site_name" content="Bechke" />
           <meta property="og:url" content={DEFAULT_CONFIG.defaultOGURL} />
           <meta property="og:title" content={DEFAULT_CONFIG.title} />
           <meta property="og:description" content={DEFAULT_CONFIG.desc} />
-          <meta property="og:type" content="website" />
-          <meta property="og:updated_time" content="1440432930" />
-          <meta property="og:image" content={DEFAULT_CONFIG.defaultOGImage} />
+          {/* <meta property="og:type" content="website" /> */}
+          {/* <meta property="og:updated_time" content="1440432930" /> */}
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-
-          <meta name="twitter:site" content={DEFAULT_CONFIG.defaultOGURL} />
-          <meta name="twitter:image" content={DEFAULT_CONFIG.defaultOGImage} />
+          <meta property="og:image" content={DEFAULT_CONFIG.defaultOGImage} />
 
           <meta
             name="apple-mobile-web-app-capable"
