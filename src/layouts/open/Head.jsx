@@ -53,8 +53,8 @@ class Head extends React.Component {
           <meta property="og:url" content={DEFAULT_CONFIG.defaultOGURL} />
           <meta property="og:title" content={DEFAULT_CONFIG.title} />
           <meta property="og:description" content={DEFAULT_CONFIG.desc} />
-          {/* <meta property="og:type" content="website" /> */}
-          {/* <meta property="og:updated_time" content="1440432930" /> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:updated_time" content="1440432930" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="og:image" content={DEFAULT_CONFIG.defaultOGImage} />

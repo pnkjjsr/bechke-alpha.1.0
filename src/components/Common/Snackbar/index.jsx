@@ -62,12 +62,11 @@ export default function CustomizedSnackbars(props) {
     </React.Fragment>
   );
 
-  const { vertical, horizontal } = state;
-
   React.useEffect(() => {
     props.open(handleOpen);
-  });
+  }, []);
 
+  const { vertical, horizontal } = state;
   return (
     <div className={s.snackbar}>
       <Snackbar
