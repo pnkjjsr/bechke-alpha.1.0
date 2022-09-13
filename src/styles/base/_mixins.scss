@@ -2,7 +2,7 @@
   width: 180px;
   height: 46px;
   border: 0 none;
-  border-radius: $gutter * 2;
+  border-radius: $borderRadius;
   color: $white;
   font-size: $fontSize;
   font-family: $fontFamily;
@@ -31,4 +31,13 @@
     border: 1px solid $secondaryColor;
     color: $secondaryColor;
   }
+}
+
+@mixin boxShadow() {
+  background: $white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+@mixin boxShadowLight() {
+  background: $white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10);
 }

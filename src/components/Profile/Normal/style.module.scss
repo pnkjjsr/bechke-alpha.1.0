@@ -1,0 +1,21 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $gutter * 2;
+
+  figure {
+    height: 80px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  figcaption {
+    color: $textColor;
+    font-size: $fontSizeH3;
+    font-weight: $fontWeightBold;
+  }
+}

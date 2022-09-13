@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import ModalHOC from "@/components/Common/Modal/transition";
-import SliderHOC from "@/components/Common/Slider/stepper";
+import SliderHOC from "@/components/Common/Slider/CarouselText";
 
 import s from "./style.module.scss";
 

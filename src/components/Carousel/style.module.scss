@@ -1,0 +1,37 @@
+.carousel {
+  margin-bottom: $gutter * 4;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: $gutter * 7;
+  }
+
+  .header {
+    padding: 0 $gutter * 2;
+    margin-bottom: 0;
+
+    h2 {
+      margin: 0;
+      font-size: $fontSizeH4;
+      font-weight: $fontWeightBlack;
+    }
+  }
+
+  .items {
+    display: flex;
+    justify-content: flex-start;
+    padding: $gutter * 3 $gutter * 3;
+    overflow-x: auto;
+    cursor: grab;
+
+    > div {
+      margin-right: $gutter * 2;
+      @include media-breakpoint-up(md) {
+        margin-right: $gutter * 4;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

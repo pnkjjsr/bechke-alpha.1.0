@@ -4,7 +4,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from "@/styles/theme"
 
 import { analytics } from "@/libs/firebase";
-import { Layout } from "@/layouts/open/index";
 
 import "@/styles/global.scss"
 
@@ -18,9 +17,7 @@ function MyApp({ Component, pageProps }) {
       {/* <CssBaseline enableColorScheme /> */}
 
       <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
 
