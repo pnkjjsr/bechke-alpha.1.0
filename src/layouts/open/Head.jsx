@@ -43,11 +43,13 @@ class Head extends React.Component {
             content="X_UAViRRJK8KBMJtpV6wJmolpk-h5vIn8ooaBt7AHL0"
           /> */}
 
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@bechkeApp" />
-          <meta name="twitter:creator" content="@bechkeApp" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content={DEFAULT_CONFIG.defaultOGURL} />
-          <meta name="twitter:image" content={DEFAULT_CONFIG.defaultOGImage} />
+          <meta property="twitter:creator" content="@bechkeApp" />
+          <meta property="twitter:title" content={DEFAULT_CONFIG.title} />
+          <meta property="twitter:url" content={DEFAULT_CONFIG.defaultOGURL} />
+          <meta property="twitter:description" content={DEFAULT_CONFIG.desc} />
+          <meta property="twitter:image" content={DEFAULT_CONFIG.defaultOGImage} />
 
           <meta property="og:site_name" content="Bechke" />
           <meta property="og:url" content={DEFAULT_CONFIG.defaultOGURL} />
@@ -64,7 +66,7 @@ class Head extends React.Component {
             content="black-translucent"
           />
 
-          <link rel="icon" sizes="192x192" href="/pwa-icons/icon-192.png" />
+          <link rel="icon" sizes="192x192" href="/pwa-icons/192x192.png" />
           <link rel="apple-touch-icon" href="/pwa-icons/32x32.png" />
           <link rel="mask-icon" href="/pwa-icons/icon-32.png" color="#49B882" />
           <link
