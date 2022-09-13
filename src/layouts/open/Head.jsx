@@ -8,7 +8,8 @@ const DEFAULT_CONFIG = {
   desc: "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
   keyword: "Bechke,BechkeApp,Supplement,Supplement Shop,Small Seller",
   defaultOGURL: "https://www.bechke.com",
-  defaultOGImage: "https://www.bechke.com/pwa-icons/og.jpg",
+  defaultOGImageBanner: "https://www.bechke.com/pwa-icons/og-1200x630.png",
+  defaultOGImageThumb: "https://www.bechke.com/pwa-icons/og.jpg",
   defaultDescription:
     "Bechke.com, is an online service for small shop owners. We provide them full technology support to do their business online.",
 };
@@ -44,12 +45,12 @@ class Head extends React.Component {
           /> */}
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content={DEFAULT_CONFIG.defaultOGURL} />
-          <meta property="twitter:creator" content="@bechkeApp" />
-          <meta property="twitter:title" content={DEFAULT_CONFIG.title} />
-          <meta property="twitter:url" content={DEFAULT_CONFIG.defaultOGURL} />
-          <meta property="twitter:description" content={DEFAULT_CONFIG.desc} />
-          <meta property="twitter:image" content={DEFAULT_CONFIG.defaultOGImage} />
+          <meta name="twitter:site" content="@bechkeApp" />
+          <meta name="twitter:creator" content="@bechkeApp" />
+          <meta
+            property="twitter:image"
+            content={DEFAULT_CONFIG.defaultOGImageBanner}
+          />
 
           <meta property="og:site_name" content="Bechke" />
           <meta property="og:url" content={DEFAULT_CONFIG.defaultOGURL} />
@@ -59,7 +60,10 @@ class Head extends React.Component {
           <meta property="og:updated_time" content="1440432930" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:image" content={DEFAULT_CONFIG.defaultOGImage} />
+          <meta
+            property="og:image"
+            content={DEFAULT_CONFIG.defaultOGImageThumb}
+          />
 
           <meta
             name="apple-mobile-web-app-capable"
