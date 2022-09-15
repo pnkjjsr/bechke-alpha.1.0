@@ -133,11 +133,16 @@ export default function Interest(props) {
       email,
       name,
       message,
-      type: "home-plans",
+      type: "catlog-card-enquiry",
     };
 
     // const docRef = await addDoc(collection(db, "customers"), postData);
     // await updateDoc(doc(db, "customers", docRef.id), { id: docRef.id });
+
+    window.open(
+      `https://wa.me/919210882260?text=https://www.bechke.com/rahulfitness | ${message}, I'm interested to buy: ${product.name} at Rs.${product.offer}. My contact: ${mobile} | ${email}`,
+      "_blank"
+    );
 
     setSnackbar({
       description: "Thank you! for the interest, we will contact you soon",

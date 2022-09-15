@@ -5,7 +5,7 @@
   height: 100%;
 
   .product {
-    padding: ($gutter * 3) 0;
+    padding: ($gutter * 3) 0 ($gutter * 2);
     border-bottom: 1px solid $grayLight;
   }
 
