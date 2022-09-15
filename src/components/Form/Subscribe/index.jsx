@@ -57,8 +57,16 @@ export default function Subscribe(props) {
     let err = `${el.name}Err`;
     let errText = `${el.name}ErrText`;
 
+    let val = el.value;
+    let name = el.name;
+
     if (!valid) {
-      setForm({ ...form, [err]: true, [errText]: errors[el.name] });
+      setForm({
+        ...form,
+        [name]: val,
+        [err]: true,
+        [errText]: errors[el.name],
+      });
       return false;
     }
 
