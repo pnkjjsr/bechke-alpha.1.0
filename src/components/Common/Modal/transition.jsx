@@ -81,7 +81,7 @@ export default function ModalHOC(props) {
           </DialogContentText>
           {props.children}
         </DialogContent>
-        <DialogActions></DialogActions>
+        {/* <DialogActions></DialogActions> */}
       </DialogTransition>
     </>
   );

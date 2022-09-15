@@ -1,0 +1,62 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .product {
+    padding: ($gutter * 3) 0;
+    border-bottom: 1px solid $grayLight;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    > div:first-child {
+      flex-grow: 1;
+      padding-top: $gutter * 3;
+    }
+  }
+
+  .terms {
+    display: flex;
+    align-items: flex-start;
+
+    label {
+      margin-top: $gutter + 5;
+      a {
+        color: $primaryColor;
+      }
+
+      small {
+        display: block;
+        margin-top: $gutter;
+        color: $textColorLighter;
+        font-size: $fontSizeSmall;
+        line-height: $fontSize;
+      }
+    }
+  }
+
+  .action {
+    // position: absolute;
+    // z-index: 1;
+    // bottom: 0;
+    // @include media-breakpoint-up(sm) {
+    //   position: static;
+    // }
+    width: 100%;
+    margin-top: $gutter * 2;
+
+    button {
+      font-size: $fontSizeH1;
+      font-weight: $fontWeightLight;
+
+      > svg {
+        margin-right: $gutter;
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Button from "@mui/material/Button";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
+import ListProduct from "@/components/Product/List";
 
 import { db } from "@/libs/firebase";
 import {
@@ -26,18 +30,15 @@ const label = {
   inputProps: { "aria-label": "Checkbox demo", htmlFor: "terms" },
 };
 
-export default function Subscribe(props) {
+export default function Interest(props) {
+  const { product } = props;
   const [form, setForm] = useState({
-    type: props.type,
     mobile: "",
     mobileErr: false,
     mobileErrText: "",
     email: "",
     emailErr: false,
     emailErrText: "",
-    name: "",
-    nameErr: false,
-    nameErrText: "",
     message: "",
     term: true,
   });
@@ -93,9 +94,9 @@ export default function Subscribe(props) {
   };
 
   const handleSubmitValidation = () => {
-    const { mobile, mobileErr, email, emailErr, name, nameErr, term } = form;
+    const { mobile, mobileErr, email, emailErr, term } = form;
 
-    if (mobileErr || emailErr || nameErr || !mobile || !email || !name) {
+    if (mobileErr || emailErr || !mobile || !email) {
       setSnackbar({
         description: "Please correct the form",
         severity: "error",
@@ -124,11 +125,10 @@ export default function Subscribe(props) {
   };
 
   const post = async () => {
-    const { type, mobile, email, name, message, term } = form;
+    const { mobile, email, name, message } = form;
 
     let postData = {
       createdate: new Date().toISOString(),
-      plan: type,
       mobile,
       email,
       name,
@@ -136,100 +136,99 @@ export default function Subscribe(props) {
       type: "home-plans",
     };
 
-    const docRef = await addDoc(collection(db, "customers"), postData);
-    await updateDoc(doc(db, "customers", docRef.id), { id: docRef.id });
+    // const docRef = await addDoc(collection(db, "customers"), postData);
+    // await updateDoc(doc(db, "customers", docRef.id), { id: docRef.id });
 
     setSnackbar({
       description: "Thank you! for the interest, we will contact you soon",
       severity: "success",
     });
 
-    setForm({ mobile: "", email: "", name: "", message: "" });
+    setForm({ mobile: "", email: "", message: "" });
     setTimeout(() => props.callback(), 7000);
     return toastOpen();
   };
 
-  const { mobile, email, name, message } = form;
+  const { mobile, email, message } = form;
   return (
     <div className={s.form}>
+      <div className={s.product}>
+        <ListProduct product={product} />
+      </div>
+
       <form action="" onSubmit={handleSubmit} noValidate autoComplete="off">
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <TextField
-              fullWidth
-              label="Mobile Number"
-              type="tel"
-              variant="outlined"
-              name="mobile"
-              onChange={handleChange}
-              inputProps={{
-                pattern: "[1-9]{1}[0-9]{9}",
-                maxLength: "10",
-              }}
-              error={form.mobileErr}
-              helperText={form.mobileErrText}
-              value={mobile}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              fullWidth
-              label="Email Id"
-              type="email"
-              variant="outlined"
-              name="email"
-              onChange={handleChange}
-              error={form.emailErr}
-              helperText={form.emailErrText}
-              value={email}
-            />
-          </Grid>
+        <div>
+          <Grid container spacing={2} alignItems="flex-start">
+            <Grid item xs={6}>
+              <TextField
+                fullWidth
+                label="Mobile Number"
+                type="tel"
+                variant="outlined"
+                name="mobile"
+                onChange={handleChange}
+                inputProps={{
+                  pattern: "[1-9]{1}[0-9]{9}",
+                  maxLength: "10",
+                }}
+                error={form.mobileErr}
+                helperText={form.mobileErrText}
+                value={mobile}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                fullWidth
+                label="Email Id"
+                type="email"
+                variant="outlined"
+                name="email"
+                onChange={handleChange}
+                error={form.emailErr}
+                helperText={form.emailErrText}
+                value={email}
+              />
+            </Grid>
 
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Your Brand Name"
-              type="text"
-              variant="outlined"
-              name="name"
-              onChange={handleChange}
-              error={form.nameErr}
-              helperText={form.nameErrText}
-              value={name}
-            />
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                multiline
+                rows={2}
+                label="Message"
+                variant="outlined"
+                name="message"
+                onChange={handleChange}
+                value={message}
+              />
+            </Grid>
           </Grid>
-
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              multiline
-              rows={2}
-              label="Need customize plan? Please suggest!"
-              variant="outlined"
-              name="message"
-              onChange={handleChange}
-              value={message}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <div className={s.terms}>
-              <Checkbox onChange={handleTerm} {...label} defaultChecked />
-              <label htmlFor="terms">
-                {/* <Link href="#"> */}
-                <a target="_blank">Terms &amp; condition apply</a>
-                {/* </Link> */}
-
-                <small>
-                  By submitting you understand, subscribe and accept all the
-                  ‘terms &amp; condition’ and ‘privacy policy’.
-                </small>
-              </label>
-            </div>
-          </Grid>
-        </Grid>
+        </div>
 
         <div className={s.action}>
-          <button>Subscribe &amp; Start</button>
+          <div className={s.terms}>
+            <Checkbox onChange={handleTerm} {...label} defaultChecked />
+            <label htmlFor="terms">
+              {/* <Link href="#"> */}
+              <a target="_blank">Terms &amp; condition apply!</a>
+              {/* </Link> */}
+
+              {/* <small>
+                  By submitting you understand, subscribe and accept all the
+                  ‘terms &amp; condition’ and ‘privacy policy’.
+                </small> */}
+            </label>
+          </div>
+
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="secondary"
+            size="large"
+          >
+            <WhatsAppIcon /> I Want To Buy
+          </Button>
         </div>
       </form>
 

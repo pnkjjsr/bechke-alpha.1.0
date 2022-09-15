@@ -1,0 +1,24 @@
+.product {
+  display: flex;
+
+  figure {
+    width: 72px;
+    height: 72px;
+    margin-right: $gutter;
+    border: 1px solid $grayLight;
+    border-radius: $borderRadius;
+  }
+
+  .details {
+    flex-grow: 1;
+
+    .name {
+      margin-bottom: $gutter;
+      font-size: $fontSizeSmall;
+      font-weight: $fontWeightBold;
+    }
+    .price {
+      color: $secondaryColor;
+    }
+  }
+}

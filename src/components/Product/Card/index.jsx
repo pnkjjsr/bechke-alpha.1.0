@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import GppGoodIcon from '@mui/icons-material/GppGood';
+import Button from "@mui/material/Button";
+import { CardActionArea } from "@mui/material";
+import GppGoodIcon from "@mui/icons-material/GppGood";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
-import { CardActionArea } from "@mui/material";
-import Button from "@mui/material/Button";
+import ModalHOC from "@/components/Common/Modal/transition";
+import FormInterest from "@/components/Form/Interest";
 
 import s from "./style.module.scss";
 
 function Card(props) {
   const { product } = props;
+  const [openFn, setOpenFn] = useState();
+  const [closeFn, setCloseFn] = useState();
+
+  const modalOpen = (fn) => setOpenFn(() => fn);
+  const modalClose = (fn) => setCloseFn(() => fn);
+  const submitCallback = () => closeFn();
+
   return (
     <div className={s.product}>
       <span className={s.off}>
@@ -51,7 +60,13 @@ function Card(props) {
       </CardActionArea>
 
       <div className={s.action}>
-        <Button fullWidth variant="contained" color="primary" size="small">
+        <Button
+          fullWidth
+          variant="contained"
+          color="primary"
+          size="small"
+          onClick={openFn}
+        >
           Send Enquiry
         </Button>
       </div>
@@ -70,6 +85,15 @@ function Card(props) {
           <span>Authenticity Guarantee</span>
         </li>
       </ul>
+
+      <ModalHOC
+        title="I'm interested &amp; want to buy"
+        text=""
+        openFn={modalOpen}
+        closeFn={modalClose}
+      >
+        <FormInterest product={product} callback={submitCallback} />
+      </ModalHOC>
     </div>
   );
 }
