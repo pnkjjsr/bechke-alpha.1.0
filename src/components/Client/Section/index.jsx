@@ -11,7 +11,7 @@ import s from "./style.module.scss";
 function Client() {
   return (
     <section className={s.client}>
-      <h2>Our Client's Experience</h2>
+      <h2>Our Client&apos;s Experience</h2>
       <div className={s.items}>
         <Card sx={{ maxWidth: 345 }}>
           <Link href="/rahulfitness">
