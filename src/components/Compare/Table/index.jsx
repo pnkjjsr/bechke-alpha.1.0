@@ -58,7 +58,7 @@ export const Compare = () => {
   };
 
   return (
-    <div className={s.compare}>
+    <section className={s.compare}>
       <h2>The Competition Can&apos;t Compete</h2>
 
       <div className={s.table}>
@@ -69,6 +69,6 @@ export const Compare = () => {
         </div>
         {renderItems()}
       </div>
-    </div>
+    </section>
   );
 };

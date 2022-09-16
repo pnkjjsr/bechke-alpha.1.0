@@ -51,7 +51,7 @@ export const Feature = () => {
   const handleDemo = () => openFn();
 
   return (
-    <div className={s.feature}>
+    <section className={s.feature}>
       <figure>
         <Image
           src="/images/b_feature.png"
@@ -87,6 +87,6 @@ export const Feature = () => {
       <ModalHOC title="Demo" text="" openFn={modalOpen} closeFn={modalClose}>
         <SliderHOC slides={demoImages} />
       </ModalHOC>
-    </div>
+    </section>
   );
 };

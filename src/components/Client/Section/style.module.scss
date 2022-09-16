@@ -1,0 +1,16 @@
+.client {
+  max-width: $widthMax;
+  margin: auto;
+  margin-bottom: $gutter * 5;
+
+  h2 {
+    text-align: center;
+  }
+
+  .items {
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

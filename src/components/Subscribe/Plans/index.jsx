@@ -125,7 +125,7 @@ export const Subscriptions = () => {
   };
 
   return (
-    <div className={s.plans}>
+    <section className={s.plans}>
       <h2>Subscription Plans</h2>
 
       <div className={s.item}>{renderPlans()}</div>
@@ -138,6 +138,6 @@ export const Subscriptions = () => {
       >
         <SubscribeForm type={variant} callback={submitCallback} />
       </ModalHOC>
-    </div>
+    </section>
   );
 };
