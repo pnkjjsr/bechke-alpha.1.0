@@ -1,4 +1,6 @@
 import * as React from "react";
+import Image from "next/image";
+import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -10,7 +12,28 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
+import { offerPercent } from "@/utils/helper/method";
+
 import s from "./style.module.scss";
+
+const MobileStepperCss = styled(MobileStepper)(({ theme }) => ({
+  ".MuiMobileStepper-dot": {
+    width: theme.spacing(3),
+    borderRadius: theme.spacing(1),
+    boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.25)",
+    backgroundColor: "rgba(255, 255, 255, 0.25)",
+  },
+  ".MuiMobileStepper-dotActive": {
+    backgroundColor: "#fff",
+  },
+  ".MuiButtonBase-root": {
+    color: "#fff",
+
+    "&.Mui-Disabled": {
+      color: "rgba(255, 255, 255, 0.5)",
+    },
+  },
+}));
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -33,8 +56,9 @@ function SwipeableTextMobileStepper(props) {
 
   return (
     <div className={s.slider}>
-      <Box sx={{ maxWidth: 992, flexGrow: 1 }}>
-        {/* <Paper
+      <Box className={s.bannerOne} sx={{ maxWidth: 1200, flexGrow: 1 }}>
+        <Paper
+          className={s.title}
           square
           elevation={0}
           sx={{
@@ -45,36 +69,73 @@ function SwipeableTextMobileStepper(props) {
             bgcolor: "background.default",
           }}
         >
-          <Typography>{props.slides[activeStep].label}</Typography>
-        </Paper> */}
+          <Typography>{props.slides[activeStep].name}</Typography>
+        </Paper>
+
+        <div className={s.product}>
+          <figure>
+            <Image
+              src={props.slides[activeStep].product.image}
+              alt={props.slides[activeStep].product.name}
+              width="200"
+              height="200"
+            />
+          </figure>
+          <div className={s.details}>
+            <div className={s.name}>
+              {props.slides[activeStep].product.name}
+            </div>
+            <ul className={s.price}>
+              <li>
+                <span>
+                  MRP: <span>Rs.{props.slides[activeStep].product.offer}</span>
+                </span>
+              </li>
+              <li className={s.offer}>
+                <span>
+                  <small>
+                    {offerPercent(
+                      props.slides[activeStep].product.mrp,
+                      props.slides[activeStep].product.offer
+                    )}
+                    % OFF
+                  </small>
+                  Offer Price:{" "}
+                  <span>Rs.{props.slides[activeStep].product.offer}</span>
+                </span>
+              </li>
+            </ul>
+
+            <div className={s.action}>
+              <Button variant="contained" color="primary">
+                Buy Now
+              </Button>
+            </div>
+          </div>
+        </div>
 
         <AutoPlaySwipeableViews
+          interval="10000"
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
           onChangeIndex={handleStepChange}
           enableMouseEvents
         >
           {props.slides.map((step, index) => (
-            <div key={index}>
+            <div key={index} className={s.bg}>
               {Math.abs(activeStep - index) <= 2 ? (
-                <Box
-                  component="img"
-                  sx={{
-                    height: "100%",
-                    display: "block",
-                    maxWidth: 992,
-                    overflow: "hidden",
-                    width: "100%",
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
+                <picture>
+                  <source media="(min-width:992px)" srcSet={step.xl} />
+                  <source media="(min-width:568px)" srcSet={step.lg} />
+                  <img src={step.sm} alt={step.name} />
+                </picture>
               ) : null}
             </div>
           ))}
         </AutoPlaySwipeableViews>
 
-        {/* <MobileStepper
+        <MobileStepperCss
+          className={s.stepper}
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
@@ -84,7 +145,7 @@ function SwipeableTextMobileStepper(props) {
               onClick={handleNext}
               disabled={activeStep === maxSteps - 1}
             >
-              Next
+              {/* Next */}
               {theme.direction === "rtl" ? (
                 <KeyboardArrowLeft />
               ) : (
@@ -103,10 +164,10 @@ function SwipeableTextMobileStepper(props) {
               ) : (
                 <KeyboardArrowLeft />
               )}
-              Back
+              {/* Back */}
             </Button>
           }
-        /> */}
+        />
       </Box>
     </div>
   );

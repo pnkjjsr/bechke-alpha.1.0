@@ -11,12 +11,6 @@ import ProductCard from "@/components/Product/Card";
 
 import s from "@/sections/[slug]/style.module.scss";
 
-const demoImages = [
-  {
-    imgPath: "/seller/rahulfitness/banner/banner.png",
-  },
-];
-
 const products = [
   {
     name: "QNT Prime Whey Protein 4.4 Lbs",
@@ -41,6 +35,30 @@ const products = [
     selling: "3399",
     offer: "2655",
     type: "nonveg",
+  },
+];
+
+const demoImages = [
+  {
+    sm: "/images/banner/karwachauth-sm.png",
+    lg: "/images/banner/karwachauth-lg.png",
+    xl: "/images/banner/karwachauth-xl.png",
+    name: "Karwa Chauth Special Offer",
+    product: products[0],
+  },
+  {
+    sm: "/images/banner/karwachauth-sm.png",
+    lg: "/images/banner/karwachauth-lg.png",
+    xl: "/images/banner/karwachauth-xl.png",
+    name: "Navratri Offer",
+    product: products[1],
+  },
+  {
+    sm: "/images/banner/karwachauth-sm.png",
+    lg: "/images/banner/karwachauth-lg.png",
+    xl: "/images/banner/karwachauth-xl.png",
+    name: "Diwali Special Offer",
+    product: products[2],
   },
 ];
 

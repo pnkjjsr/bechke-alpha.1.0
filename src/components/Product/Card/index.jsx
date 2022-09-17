@@ -7,6 +7,7 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 import ModalHOC from "@/components/Common/Modal/transition";
 import FormInterest from "@/components/Form/Interest";
+import { offerPercent } from "@/utils/helper/method";
 
 import s from "./style.module.scss";
 
@@ -21,9 +22,7 @@ function Card(props) {
 
   return (
     <div className={s.product}>
-      <span className={s.off}>
-        {Math.round(((product.mrp - product.offer) / product.mrp) * 100)}%
-      </span>
+      <span className={s.off}>{offerPercent(product.mrp, product.offer)}%</span>
 
       <span className={s.type}>
         <Image
