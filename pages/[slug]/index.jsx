@@ -40,23 +40,23 @@ const products = [
 
 const demoImages = [
   {
-    sm: "/images/banner/karwachauth-sm.png",
-    lg: "/images/banner/karwachauth-lg.png",
-    xl: "/images/banner/karwachauth-xl.png",
+    sm: "/images/banner/karwachauth-sm.jpg",
+    lg: "/images/banner/karwachauth-lg.jpg",
+    xl: "/images/banner/karwachauth-xl.jpg",
     name: "Karwa Chauth Special Offer",
     product: products[0],
   },
   {
-    sm: "/images/banner/karwachauth-sm.png",
-    lg: "/images/banner/karwachauth-lg.png",
-    xl: "/images/banner/karwachauth-xl.png",
+    sm: "/images/banner/navratri-sm.jpg",
+    lg: "/images/banner/navratri-lg.jpg",
+    xl: "/images/banner/navratri-xl.jpg",
     name: "Navratri Offer",
     product: products[1],
   },
   {
-    sm: "/images/banner/karwachauth-sm.png",
-    lg: "/images/banner/karwachauth-lg.png",
-    xl: "/images/banner/karwachauth-xl.png",
+    sm: "/images/banner/diwali-sm.jpg",
+    lg: "/images/banner/diwali-lg.jpg",
+    xl: "/images/banner/diwali-xl.jpg",
     name: "Diwali Special Offer",
     product: products[2],
   },

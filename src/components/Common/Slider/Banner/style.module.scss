@@ -16,7 +16,7 @@
   @extend .sliderHeight;
   margin-bottom: $gutter * 4;
   overflow: hidden;
-  background-color: $grayLight;
+  // background-color: $grayLight;
 
   .bg {
     @extend .sliderHeight;
@@ -145,6 +145,7 @@
             width: fit-content;
             margin-bottom: $gutter / 2;
             background-color: $white;
+            @include boxShadow();
             @include media-breakpoint-up(md) {
               display: block;
             }
