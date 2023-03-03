@@ -4,7 +4,7 @@
   "private": true,
   "description": "Bechke App | Supplement Service",
   "engines": {
-    "node": "16"
+    "node": "18"
   },
   "scripts": {
     "dev": "next dev -p 2000",

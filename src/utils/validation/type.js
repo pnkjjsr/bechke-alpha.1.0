@@ -17,6 +17,6 @@ exports.isBoolean = (boolean) => {
 
 exports.isMobile = (mobile) => {
   if (!Number(mobile)) return false;
-  else if (mobile.length < 10) return false;
+  else if (mobile.length < 10 || mobile.length !== 10 ) return false;
   else return true;
 };

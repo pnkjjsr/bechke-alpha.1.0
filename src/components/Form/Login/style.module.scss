@@ -1,0 +1,43 @@
+.form {
+  position: relative;
+  height: calc(100% - ($gutter * 3));
+  padding-top: $gutter;
+
+  .terms {
+    display: flex;
+    align-items: flex-start;
+
+    label {
+      a {
+        color: $primaryColor;
+      }
+
+      small {
+        display: block;
+        margin-top: $gutter;
+        color: $textColorLighter;
+        font-size: $fontSizeSmall;
+        line-height: $fontSize;
+      }
+    }
+  }
+
+  .action {
+    // position: absolute;
+    z-index: 1;
+    bottom: 0;
+    @include media-breakpoint-up(sm) {
+      position: static;
+    }
+    width: 100%;
+
+    button {
+      @include btnSecondary();
+      width: 100%;
+      height: $gutter * 8;
+      font-size: $fontSizeH1;
+      font-weight: $fontWeightLight;
+      cursor: pointer;
+    }
+  }
+}

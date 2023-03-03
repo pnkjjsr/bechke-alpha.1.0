@@ -2,29 +2,31 @@
   position: relative;
   z-index: $indexHeader;
   display: flex;
-  justify-content: center;
-  padding-top: $gutter;
+  justify-content: space-between;
 
-  span {
-    position: relative;
-    color: $primaryColor;
-    font-size: 70px;
-    font-weight: $fontWeightBlack;
-    text-align: center;
+  .logo {
+    margin: $gutter;
 
-    a {
-      text-decoration: none;
-    }
+    span {
+      position: relative;
+      color: $primaryColor;
+      font-size: $fontSizeH2;
+      font-weight: $fontWeightBlack;
 
-    small {
-      position: absolute;
-      z-index: 1;
-      right: -12px;
-      top: $gutter/2;
-      color: #b5b5b5;
-      font-family: "Lato";
-      font-weight: $fontWeightLight;
-      font-size: $fontSize;
+      a {
+        text-decoration: none;
+      }
+
+      small {
+        position: absolute;
+        z-index: 1;
+        right: -12px;
+        top: $gutter/2;
+        color: #b5b5b5;
+        font-family: "Lato";
+        font-weight: $fontWeightLight;
+        font-size: $fontSize;
+      }
     }
   }
 }

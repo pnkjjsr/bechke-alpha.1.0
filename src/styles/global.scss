@@ -148,6 +148,15 @@ body {
   font-weight: $fontWeight;
 }
 
+@mixin sub($fs) {
+  small {
+    display: block;
+    margin-top: $gutter;
+    font-size: $fs/1.1;
+    font-weight: $fontWeight;
+  }
+}
+
 h1 {
   margin-bottom: $gutter * 3;
   font-size: $fontSizeH1;
@@ -169,6 +178,20 @@ h3 {
 h4 {
   margin-bottom: $gutter * 2;
   font-size: $fontSizeH4;
+  font-weight: $fontWeightBold;
+  
+}
+
+h5 {
+  margin-bottom: $gutter * 2;
+  font-size: $fontSizeH5;
+  font-weight: $fontWeightBold;
+  @include sub($fontSizeH5);
+}
+
+h6 {
+  margin-bottom: $gutter * 2;
+  font-size: $fontSizeH6;
   font-weight: $fontWeightBold;
 }
 

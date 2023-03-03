@@ -6,7 +6,6 @@ import { getFirestore } from "firebase/firestore";
 
 import firebaseConfig from "@/configs/firebaseConfig.json";
 
-
 let app;
 if (!getApps.length) app = initializeApp(firebaseConfig);
 else app = getApp();
@@ -19,7 +18,4 @@ if (app.name && typeof window !== 'undefined') {
   analytics = getAnalytics(app);
 }
 
-export { auth, db, analytics }
-
-
-
+export {app, auth, db, analytics }
