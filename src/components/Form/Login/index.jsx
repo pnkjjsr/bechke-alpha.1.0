@@ -86,6 +86,16 @@ export default function Login(props) {
 
   const handleVerify = () => {
     const code = form.otp;
+    if (!form.otp || form.otpErr) {
+      setSnackbar({
+        description: "Please enter correct OTP",
+        severity: "error",
+      });
+
+      toastOpen();
+      return false;
+    }
+
     confirmationResult
       .confirm(code)
       .then((result) => {
@@ -171,7 +181,7 @@ export default function Login(props) {
 
     if (!mobile || mobileErr) {
       setSnackbar({
-        description: "Please enter mobile number.",
+        description: "Please enter mobile number",
         severity: "error",
       });
 
@@ -216,7 +226,7 @@ export default function Login(props) {
     });
 
     setForm({ mobile: "", otp: "" });
-    setTimeout(() => props.callback(), 3000);
+    setTimeout(() => props.callback(), 1000);
     return toastOpen();
   };
 
