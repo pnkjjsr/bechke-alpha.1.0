@@ -12,7 +12,7 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
-import { offerPercent } from "@/utils/helper/method";
+import { offerPercent } from "@/utils/helpers/method";
 
 import s from "./style.module.scss";
 

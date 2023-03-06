@@ -7,7 +7,7 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 import ModalHOC from "@/components/Common/Modal/transition";
 import FormInterest from "@/components/Form/Interest";
-import { offerPercent } from "@/utils/helper/method";
+import { offerPercent } from "@/utils/helpers/method";
 
 import s from "./style.module.scss";
 

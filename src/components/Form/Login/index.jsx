@@ -32,6 +32,7 @@ import {
 import { auth, db } from "@/libs/firebase";
 import Snackbar from "@/components/Common/Snackbar";
 
+import { login } from "@/utils/sessions";
 import validation from "./validation";
 
 import s from "./style.module.scss";
@@ -206,6 +207,8 @@ export default function Login(props) {
       // console.log("No such document!");
       await setDoc(doc(db, "users", postData.id), postData);
     }
+
+    login(postData);
 
     setSnackbar({
       description: "Successfully logged in, you will redirect soon.",

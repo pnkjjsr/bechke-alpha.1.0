@@ -1,4 +1,4 @@
-import { isEmail, isEmpty } from "../../../utils/validation/type";
+import { isEmail, isEmpty } from "@/utils/validations/type";
 
 function validation(data) {
   let errors = {};
