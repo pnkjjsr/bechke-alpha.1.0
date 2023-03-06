@@ -4,7 +4,7 @@ import LoginForm from "@/components/Form/Login";
 
 import s from "./style.module.scss";
 
-function OAuth() {
+function OAuth(props) {
   useEffect(() => {}, []);
 
   return (
@@ -17,7 +17,7 @@ function OAuth() {
         </h5>
       </div>
 
-      <LoginForm />
+      <LoginForm callback={props.callback} />
     </div>
   );
 }

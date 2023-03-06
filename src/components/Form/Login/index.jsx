@@ -18,8 +18,10 @@ import {
   FacebookAuthProvider,
 } from "firebase/auth";
 import {
+  setDoc,
   addDoc,
   doc,
+  getDoc,
   updateDoc,
   collection,
   query,
@@ -55,6 +57,17 @@ export default function Login(props) {
     setToastOpen(() => fn);
   };
 
+  const parseUser = (user) => {
+    return {
+      id: user.uid,
+      displayName: user.providerData[0].displayName,
+      email: user.providerData[0].email,
+      phoneNumber: user.providerData[0].phoneNumber,
+      photoURL: user.providerData[0].photoURL,
+      providerId: user.providerData[0].providerId,
+    };
+  };
+
   const handleMobile = () => {
     const phoneNumber = `+91${form.mobile}`;
     const appVerifier = window.recaptchaVerifier;
@@ -62,6 +75,7 @@ export default function Login(props) {
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
+
         setView_pwd(true);
       })
       .catch((error) => {
@@ -74,8 +88,8 @@ export default function Login(props) {
     confirmationResult
       .confirm(code)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
+        let user = parseUser(result.user);
+        post(user);
       })
       .catch((error) => {
         console.log(error);
@@ -87,8 +101,9 @@ export default function Login(props) {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
+        // const token = credential.accessToken;
+        let user = parseUser(result.user);
+        post(user);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -102,9 +117,10 @@ export default function Login(props) {
     const provider = new FacebookAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        const user = result.user;
         const credential = FacebookAuthProvider.credentialFromResult(result);
-        const accessToken = credential.accessToken;
+        // const accessToken = credential.accessToken;
+        let user = parseUser(result.user);
+        post(user);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -171,36 +187,33 @@ export default function Login(props) {
     if (!valid) return;
 
     handleMobile();
-
     // if (isMobile(form.mobile)) handleMobile();
     // else if (isEmail(form.mobile)) console.log("email ", form.mobile);
-
-    // post();
   };
 
-  const post = async () => {
-    const { type, mobile, email, name, message, term } = form;
-
+  const post = async (user) => {
     let postData = {
       createdate: new Date().toISOString(),
-      plan: type,
-      mobile,
-      email,
-      name,
-      message,
-      type: "home-plans",
+      ...user,
     };
 
-    const docRef = await addDoc(collection(db, "customers"), postData);
-    await updateDoc(doc(db, "customers", docRef.id), { id: docRef.id });
+    const docRef = doc(db, "users", postData.id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      // console.log("Document data:", docSnap.data());
+    } else {
+      // console.log("No such document!");
+      await setDoc(doc(db, "users", postData.id), postData);
+    }
 
     setSnackbar({
-      description: "Thank you! for the interest, we will contact you soon",
+      description: "Successfully logged in, you will redirect soon.",
       severity: "success",
     });
 
-    setForm({ mobile: "", email: "", name: "", message: "" });
-    setTimeout(() => props.callback(), 7000);
+    setForm({ mobile: "", otp: "" });
+    setTimeout(() => props.callback(), 3000);
     return toastOpen();
   };
 
@@ -210,6 +223,7 @@ export default function Login(props) {
       {
         size: "invisible",
         callback: (response) => {
+          // console.log("prepared phone auth process");
           // handleSubmit();
         },
       },
@@ -252,7 +266,7 @@ export default function Login(props) {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label={`Enter OTP code sent to you at ${form.input}`}
+              label={`Enter OTP code sent to you at ${form.mobile}`}
               variant="outlined"
               name="otp"
               type="number"
@@ -268,7 +282,7 @@ export default function Login(props) {
           </Grid>
 
           <Grid className={s.action} item xs={12}>
-            <button type="button" onClick={handleVerify}>
+            <button id="sign-in" type="submit" onClick={handleVerify}>
               Verify
             </button>
           </Grid>

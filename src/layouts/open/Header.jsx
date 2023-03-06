@@ -36,7 +36,7 @@ export const HeaderLayout = (props) => {
       </div>
 
       <ModalHOC title="Login" text="" openFn={modalOpen} closeFn={modalClose}>
-        <OAuth />
+        <OAuth callback={submitCallback} />
       </ModalHOC>
     </div>
   );
