@@ -5,13 +5,14 @@ import theme from "@/styles/theme"
 
 import { AuthProvider } from "@/contexts/Auth";
 
-import { analytics } from "@/libs/firebase";
+import { analytics, messaging } from "@/libs/firebase";
 
 import "@/styles/global.scss"
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     analytics;
+    messaging;
   }, []);
 
   return (
