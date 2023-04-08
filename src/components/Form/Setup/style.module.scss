@@ -1,0 +1,45 @@
+.form {
+  max-width: $sm;
+  margin: auto;
+  padding: $gutter;
+
+  .header {
+    .heading {
+      small {
+        display: block;
+        margin-top: $gutter * 2;
+        font-size: $fontSizeH5;
+      }
+    }
+  }
+
+  form {
+    margin: $gutter * 6 auto;
+
+    .helper {
+      display: block;
+      margin-top: $gutter;
+      padding-left: $gutter * 2;
+    }
+
+    .action {
+      width: 100%;
+      margin-top: $gutter * 3;
+      text-align: center;
+
+      button {
+        @include btnPrimary;
+        width: 100%;
+        height: 60px;
+        padding-left: $gutter * 5;
+        padding-right: $gutter * 5;
+        font-size: $fontSizeH1;
+        font-weight: $fontWeightLight;
+
+        > svg {
+          margin-right: $gutter;
+        }
+      }
+    }
+  }
+}

@@ -64,7 +64,7 @@ const demoImages = [
 
 function Seller(props) {
   const router = useRouter();
-  const { slug } = props.params;
+  const [load, setLoad] = useState(false);
 
   const renderProduct = () => {
     return products.map((item, i) => {
@@ -72,24 +72,27 @@ function Seller(props) {
     });
   };
 
-  useEffect(() => {});
+  useEffect(() => {
+    setLoad(true);
+  });
 
-  return (
-    <>
-      <Layout>
-        <div className={s.seller}>
-          <h1>Coming Soon</h1>
-        </div>
-      </Layout>
-    </>
-  );
-}
+  if (!load) return <LoaderCircular />;
+  else
+    return (
+      <>
+        <Layout>
+          <div className={s.seller}>
+            <Profile name="" image="/seller/rahulfitness/profile/profile.png" />
 
-export async function getServerSideProps(context) {
-  const { params } = context;
-  return {
-    props: { params },
-  };
+            <Banner slides={demoImages} />
+
+            <Carousel name="Diwali Special Offers" items={renderProduct} />
+            <Carousel name="Best Offers" items={renderProduct} />
+            <Carousel name="All Products" items={renderProduct} />
+          </div>
+        </Layout>
+      </>
+    );
 }
 
 export default Seller;

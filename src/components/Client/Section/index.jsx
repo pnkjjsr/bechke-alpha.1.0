@@ -15,7 +15,7 @@ function Client() {
       <div className={s.items}>
         <Card sx={{ maxWidth: 345 }}>
           <Link href="/rahulfitness">
-            <a target="_blank">
+            <a>
               <CardActionArea>
                 <CardMedia
                   component="img"

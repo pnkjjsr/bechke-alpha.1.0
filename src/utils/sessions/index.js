@@ -21,3 +21,11 @@ export const logout = () => {
     destroyCookie(null, "uid")
     localStorage.removeItem("user");
 }
+
+export const getUID = () => {
+    const cookies = parseCookies()
+    const uid = cookies.uid;
+
+    if (!uid) return false
+    else return uid;
+}

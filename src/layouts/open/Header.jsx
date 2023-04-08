@@ -1,6 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { signOut } from "firebase/auth";
+import {
+  setDoc,
+  addDoc,
+  doc,
+  getDoc,
+  updateDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
 
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
@@ -16,8 +28,8 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
 import { AuthContext } from "@/contexts/Auth";
-import { auth } from "@/libs/firebase";
-import { logout } from "@/utils/sessions";
+import { db, auth } from "@/libs/firebase";
+import { getUID, logout } from "@/utils/sessions";
 
 import OAuth from "@/components/Common/OAuth";
 import ModalHOC from "@/components/Common/Modal/transition";
@@ -25,8 +37,10 @@ import ModalHOC from "@/components/Common/Modal/transition";
 import s from "./header.module.scss";
 
 export const HeaderLayout = (props) => {
+  const router = useRouter();
   const { authenticated, setAuthenticated, profile, setProfile } =
     useContext(AuthContext);
+  const [link, setLink] = useState("");
 
   const [openFn, setOpenFn] = useState();
   const [closeFn, setCloseFn] = useState();
@@ -55,6 +69,31 @@ export const HeaderLayout = (props) => {
         console.log(error);
       });
   };
+
+  const handleSetup = () => {
+    setAnchorEl(null);
+    router.push("/setup");
+  };
+  const handleWebsite = () => {
+    setAnchorEl(null);
+    router.push(link);
+  };
+
+  const isLinkName = async () => {
+    let uid = getUID();
+    if (uid) {
+      const docRef = doc(db, "users", uid);
+      const docSnap = await getDoc(docRef);
+      let data = docSnap.data();
+      if (data.linkName) setLink(data.linkName);
+    } else {
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    isLinkName();
+  }, []);
 
   return (
     <div className={s.header}>
@@ -122,9 +161,13 @@ export const HeaderLayout = (props) => {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              {/* <MenuItem onClick={menuClose}>
-                <Avatar /> Profile
-              </MenuItem>
+              {link && (
+                <MenuItem onClick={handleWebsite}>
+                  <Avatar /> Your Website
+                </MenuItem>
+              )}
+
+              {/* 
               <MenuItem onClick={menuClose}>
                 <Avatar /> My account
               </MenuItem>
@@ -134,13 +177,16 @@ export const HeaderLayout = (props) => {
                   <PersonAdd fontSize="small" />
                 </ListItemIcon>
                 Add another account
-              </MenuItem>
-              <MenuItem onClick={menuClose}>
-                <ListItemIcon>
-                  <Settings fontSize="small" />
-                </ListItemIcon>
-                Settings
               </MenuItem> */}
+              {!link && (
+                <MenuItem onClick={handleSetup}>
+                  <ListItemIcon>
+                    <Settings fontSize="small" />
+                  </ListItemIcon>
+                  Setup
+                </MenuItem>
+              )}
+
               <MenuItem onClick={handleLogout}>
                 <ListItemIcon>
                   <Logout fontSize="small" />

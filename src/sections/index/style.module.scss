@@ -5,6 +5,39 @@
     margin-bottom: $gutter * 6;
     text-align: center;
   }
+
+  .action {
+    margin-bottom: $gutter * 2;
+    text-align: center;
+
+    .open {
+      @include btnSecondary;
+      width: 100%;
+      max-width: $widthMin;
+      height: 75px;
+      font-size: $fontSizeH2;
+      font-weight: $fontWeight;
+      cursor: pointer;
+
+      small {
+        display: block;
+        font-size: $fontSize;
+        font-weight: $fontWeightLight;
+      }
+    }
+
+    .setup {
+      @include btnPrimary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      font-size: $fontSizeLarge;
+      font-weight: $fontWeight;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
