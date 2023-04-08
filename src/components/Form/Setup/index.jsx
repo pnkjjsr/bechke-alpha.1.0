@@ -123,7 +123,7 @@ export default function Setup() {
     <div className={s.form}>
       <div className={s.header}>
         <h1 className={s.heading}>
-          Setup your brand's website in simple steps.
+          Setup your brand&apos;s website in simple steps.
           <small>Open business for the world!</small>
         </h1>
       </div>
@@ -139,7 +139,7 @@ export default function Setup() {
           value={form.brand}
         />
         <span className={s.helper}>
-          "bechke.com/<b>{linkname}</b>", this is your online shop link.
+          &quot;bechke.com/<b>{linkname}</b>&quot;, this is your online shop link.
         </span>
 
         <div className={s.action}>

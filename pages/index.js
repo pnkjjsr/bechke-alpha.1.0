@@ -75,7 +75,7 @@ export default function Home() {
             <button className={s.open} onClick={openFn}>
               Open Now
               <small>
-                Your's Free Website
+                Your&apos;s Free Website
               </small>
             </button>)}
       </div>
