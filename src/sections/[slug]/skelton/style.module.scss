@@ -1,0 +1,53 @@
+.logo {
+  position: relative;
+  width: 100%;
+  max-width: 204px;
+  margin: auto;
+  padding: $gutter;
+  border: 1px solid $grayLight;
+  border-radius: $borderRadius;
+  text-align: center;
+
+  .action {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    height: 30px;
+    background-color: $grayLighter;
+    border-top-right-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+  }
+
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: $gutter;
+    background-color: $grayLighter;
+    border-radius: 100%;
+
+    img {
+    }
+    figcaption {
+      color: $grayLight;
+      font-size: $fontSizeH1;
+      font-weight: $fontWeightBlack;
+      text-transform: uppercase;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    font-size: $fontSizeH4;
+    font-weight: $fontWeightBold;
+    text-transform: capitalize;
+  }
+}

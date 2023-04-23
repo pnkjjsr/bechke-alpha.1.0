@@ -1,9 +1,6 @@
 .header {
   position: relative;
   z-index: $indexHeader;
-  display: flex;
-  justify-content: center;
-  padding-top: $gutter;
 
   span {
     position: relative;

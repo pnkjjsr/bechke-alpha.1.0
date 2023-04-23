@@ -12,9 +12,9 @@ import {
   getDocs,
 } from "firebase/firestore";
 
-import { AuthContext } from "@/contexts/Auth";
 import { db } from "@/libs/firebase";
 import { getUID } from "@/utils/sessions"
+import { AuthContext } from "@/contexts/Auth";
 
 import { Layout } from "@/layouts/open/index";
 import { Feature } from "@/components/Feature/bechke"

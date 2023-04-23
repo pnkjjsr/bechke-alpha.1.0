@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import nookies from "nookies";
 
 import { Layout } from "@/layouts/seller";
 import LoaderCircular from "@/components/Common/Progress/circular";
@@ -9,6 +10,8 @@ import Banner from "@/components/Common/Slider/Banner";
 import Carousel from "@/components/Carousel";
 import ProductCard from "@/components/Product/Card";
 
+import Logo from "@/sections/[slug]/skelton/Logo";
+import { getUser } from "@/sections/[slug]/firestore";
 import s from "@/sections/[slug]/style.module.scss";
 
 const products = [
@@ -65,6 +68,7 @@ const demoImages = [
 function Seller(props) {
   const router = useRouter();
   const { slug } = props.params;
+  const user = props.user;
 
   const renderProduct = () => {
     return products.map((item, i) => {
@@ -78,7 +82,7 @@ function Seller(props) {
     <>
       <Layout>
         <div className={s.seller}>
-          <h1>Coming Soon</h1>
+          <Logo user={user} />
         </div>
       </Layout>
     </>
@@ -87,8 +91,11 @@ function Seller(props) {
 
 export async function getServerSideProps(context) {
   const { params } = context;
+  const cookies = nookies.get(context);
+  const user = await getUser(cookies.uid);
+
   return {
-    props: { params },
+    props: { params, user },
   };
 }
 
